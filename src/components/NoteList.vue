@@ -3,16 +3,12 @@
     <header class="app-header">All Notes ({{ notesCount }})</header>
     <ul>
       <li v-for="note in notes">
-        <a>
-          <v-icon class="md-icon">chevron_right</v-icon>
-          <p class="note-title">{{ note.title }}</p>
-          <p class="small">{{ note.meta }}</p>
-        </a>
+        <NoteListItem v-bind:note="note" />
       </li>
     </ul>
     <div class="app-controls">
       <div class="u-flex-row">
-        <v-btn primary dark>Add Note</v-btn>
+        <v-btn primary dark class="u-elastic">Add Note</v-btn>
       </div>
     </div>
   </div>
