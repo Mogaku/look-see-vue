@@ -11,5 +11,11 @@ new Vue({
   el: '#app',
   router,
   template: '<App/>',
+  localStorage: {
+    notes: {
+      type: Array,
+      default: [],
+    },
+  },
   components: { App },
 });

@@ -1,20 +1,22 @@
 <template>
   <div class="NoteList u-absolute-flex-column">
     <header class="app-header">All Notes ({{ notesCount }})</header>
-    <ul>
+    <ul class="u-scroller">
       <li v-for="note in notes">
         <NoteListItem v-bind:note="note" />
       </li>
     </ul>
     <div class="app-controls">
       <div class="u-flex-row">
-        <v-btn primary dark class="u-elastic">Add Note</v-btn>
+        <v-btn primary dark class="u-elastic" @click.native="addNew()">Add Note</v-btn>
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import NoteListItem from '@/components/NoteListItem';
+
 export default {
   name: 'hello',
   data() {
@@ -24,11 +26,11 @@ export default {
   },
   methods: {
     loadNotes() {
-      this.notes = [
-        { title: 'A new note', meta: 'Added 2 days ago' },
-        { title: 'Another new note', meta: 'Added 2 days ago' },
-        { title: 'And another one', meta: 'Added 2 days ago' },
-      ];
+      this.notes = this.$localStorage.get('notes');
+    },
+    addNew() {
+      console.log('hello');
+      this.$router.push('/new');
     },
   },
   mounted() {
@@ -39,6 +41,7 @@ export default {
       return this.notes.length;
     },
   },
+  components: { NoteListItem },
 };
 </script>
 

@@ -1,16 +1,23 @@
 <template>
   <div class="NoteListItem">
-    <a>
+    <router-link :to="{ name: 'View Note', params: { id: note.id } }">
       <v-icon class="md-icon">chevron_right</v-icon>
-      <p class="note-title">{{ note.title }}</p>
-      <p class="small">{{ note.meta }}</p>
-    </a>
+      <p class="note-title">{{ note.text }}</p>
+      <p class="small">{{ parseTimestamp(note.timestamp) }}</p>
+    </router-link>
   </div>
 </template>
 
 <script>
+const moment = require('moment');
+
 export default {
   props: ['note'],
+  methods: {
+    parseTimestamp(ts) {
+      return moment(ts).fromNow();
+    },
+  },
 };
 </script>
 
