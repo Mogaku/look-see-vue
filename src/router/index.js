@@ -2,6 +2,7 @@ import Vue from 'vue';
 import VueLocalStorage from 'vue-localstorage';
 import Router from 'vue-router';
 import Vuetify from 'vuetify';
+import AccountsList from '@/components/AccountsList';
 import NoteList from '@/components/NoteList';
 import Note from '@/components/Note';
 import CreateNote from '@/components/CreateNote';
@@ -15,7 +16,12 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'NoteList',
+      name: 'Accounts List',
+      component: AccountsList,
+    },
+    {
+      path: '/notes',
+      name: 'Note List',
       component: NoteList,
     },
     {
