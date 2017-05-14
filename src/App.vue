@@ -21,7 +21,7 @@ export default {
   right: 0;
   top: 0;
   bottom: 0;
-  width: 400px;
+  width: 100%;
   height: 80%;
   margin: auto auto;
   border: solid 1px #EFEFEF;

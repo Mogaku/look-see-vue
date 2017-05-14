@@ -29,7 +29,6 @@ export default {
       this.notes = this.$localStorage.get('notes');
     },
     addNew() {
-      console.log('hello');
       this.$router.push('/new');
     },
   },

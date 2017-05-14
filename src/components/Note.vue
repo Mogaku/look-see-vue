@@ -39,6 +39,7 @@ export default {
       this.$router.push(`/edit/${this.id}`);
     },
     deleteNote() {
+      /*
       if (confirm('Delete note?')) {
         const notes = this.$localStorage.get('notes');
         const noteIndex = notes.findIndex(note => note.id === this.id);
@@ -46,6 +47,7 @@ export default {
         this.$localStorage.set('notes', notes);
         this.$router.push('/');
       }
+      */
     },
   },
   mounted() {
